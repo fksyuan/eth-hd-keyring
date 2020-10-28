@@ -1,7 +1,8 @@
 const hdkey = require('ethereumjs-wallet/hdkey')
-const SimpleKeyring = require('eth-simple-keyring')
+const SimpleKeyring = require('@fksyuan/eth-simple-keyring')
 const bip39 = require('bip39')
-const sigUtil = require('eth-sig-util')
+const ethUtil = require('@fksyuan/ethereumjs-util')
+const sigUtil = require('@fksyuan/eth-sig-util')
 
 // Options:
 const hdPathString = `m/44'/60'/0'/0`
@@ -61,9 +62,10 @@ class HdKeyring extends SimpleKeyring {
     return Promise.resolve(hexWallets)
   }
 
-  getAccounts () {
+  getAccounts (hrp) {
     return Promise.resolve(this.wallets.map((w) => {
-      return sigUtil.normalize(w.getAddress().toString('hex'))
+      const addr =  sigUtil.normalize(w.getAddress().toString('hex'))
+      return ethUtil.toBech32Address(hrp, sigUtil.normalize(w.getAddress().toString('hex')))
     }))
   }
 

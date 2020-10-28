@@ -1,7 +1,7 @@
 {
-  "name": "eth-hd-keyring",
+  "name": "@fksyuan/eth-hd-keyring",
   "version": "3.5.0",
-  "description": "A simple standard interface for a seed phrase generated set of Ethereum accounts.",
+  "description": "A simple standard interface for a seed phrase generated set of PlatON accounts.",
   "engines": {
     "node": ">= 10"
   },
@@ -13,23 +13,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/MetaMask/eth-hd-keyring.git"
+    "url": "git+ssh://git@github.com/fksyuan/eth-hd-keyring.git"
   },
   "keywords": [
-    "ethereum",
+    "platon",
     "keyring"
   ],
   "author": "Dan Finlay",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MetaMask/eth-hd-keyring/issues"
+    "url": "https://github.com/fksyuan/eth-hd-keyring/issues"
   },
-  "homepage": "https://github.com/MetaMask/eth-hd-keyring#readme",
+  "homepage": "https://github.com/fksyuan/eth-hd-keyring#readme",
   "dependencies": {
     "bip39": "^2.2.0",
-    "eth-sig-util": "^2.4.4",
-    "eth-simple-keyring": "^3.5.0",
-    "ethereumjs-util": "^5.1.1",
+    "@fksyuan/eth-sig-util": "^2.5.3",
+    "@fksyuan/eth-simple-keyring": "^4.0.0",
+    "@fksyuan/ethereumjs-util": "^5.2.0",
     "ethereumjs-wallet": "^0.6.0"
   },
   "devDependencies": {
